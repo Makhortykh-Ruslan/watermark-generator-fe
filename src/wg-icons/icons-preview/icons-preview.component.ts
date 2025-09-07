@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { distinctUntilChanged, Subscription } from 'rxjs';
 import { WgIconComponent } from '../wg-icon.component';
@@ -21,7 +25,9 @@ export class IconsPreviewComponent implements OnInit {
     this.subscription = this.searchControl.valueChanges
       .pipe(distinctUntilChanged())
       .subscribe((val: string) => {
-        this.icons = completeIconSet.filter((el: WgIcon) => el.name.includes(val));
+        this.icons = completeIconSet.filter((el: WgIcon) =>
+          el.name.includes(val),
+        );
       });
   }
 }

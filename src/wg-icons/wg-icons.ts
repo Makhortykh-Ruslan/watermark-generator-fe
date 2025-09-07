@@ -11,5 +11,6 @@ export interface WgIcon {
   name: wgIcon;
   data: string;
 }
-export type WgIconNameSubset<T extends Readonly<WgIcon[]>> = T[number]['name'];
+export type WgIconNameSubset<T extends Readonly<WgIcon[]>> =
+  T[number]['name'];
 export const completeIconSet = [wgIconsArchive];

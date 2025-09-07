@@ -5,7 +5,8 @@ import { environment } from '../environments/environment';
 const baseRoutes = [
   {
     path: '',
-    loadChildren: () => import('./pages/main/main.routing').then((r) => r.MAIN_ROUTING),
+    loadChildren: () =>
+      import('./pages/main/main.routing').then((r) => r.MAIN_ROUTING),
   },
   {
     path: '**',
@@ -14,6 +15,8 @@ const baseRoutes = [
   },
 ] as Routes;
 
-export const routes: Routes = environment.production ? baseRoutes : [...baseRoutes];
+export const routes: Routes = environment.production
+  ? baseRoutes
+  : [...baseRoutes];
 
 export const appRoutingProviders = [provideRouter(routes)];
