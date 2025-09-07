@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "srcFiles": ["./src/assets/icons/*.svg"],
+  "outputDirectory": "./src/wg-icons",
+  "fileName": "wg-icons",
+  "interfaceName": "WgIcon",
+  "typeName": "wgIcon",
+  "prefix": "wgIcons",
+  "exportCompleteIconSet": true,
+  "svgoConfig": {
+    "plugins": ["cleanupAttrs"]
+  }
+}
