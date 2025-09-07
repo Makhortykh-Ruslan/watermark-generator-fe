@@ -4,9 +4,9 @@ import {
   provideZonelessChangeDetection,
 } from '@angular/core';
 import { appRoutingProviders } from './app.routes';
-import {provideStore} from '@ngxs/store';
-import {environment} from '../environments/environment';
-import {withNgxsReduxDevtoolsPlugin} from '@ngxs/devtools-plugin';
+import { provideStore } from '@ngxs/store';
+import { environment } from '../environments/environment';
+import { withNgxsReduxDevtoolsPlugin } from '@ngxs/devtools-plugin';
 
 export const appConfig: ApplicationConfig = {
   providers: [

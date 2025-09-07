@@ -8,9 +8,7 @@ export class WgIconsService {
   private registry = new Map<string, string>();
 
   public registerIcons(icons: WgIcon[]): void {
-    icons.forEach((icon: WgIcon) =>
-      this.registry.set(icon.name, icon.data),
-    );
+    icons.forEach((icon: WgIcon) => this.registry.set(icon.name, icon.data));
   }
 
   public getIcon(iconName: string): string | undefined {
