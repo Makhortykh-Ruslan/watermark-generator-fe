@@ -7,7 +7,7 @@
     "watch": "ng build --watch --configuration development",
     "lint": "eslint .",
     "lint:fix": "eslint \"{src,apps,libs,test}/**/*{.ts,.html}\" --fix",
-    "format": "prettier --write \"{src,apps,libs,test}/**/*.{ts,html,scss,css,md,json}\"",
+    "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "npm run stylelint -- --fix",
     "generate-icons": "svg-to-ts-constants --config .svg-to-ts.json"
@@ -27,8 +27,8 @@
     "@ngxs/logger-plugin": "^20.1.0",
     "@ngxs/store": "^20.1.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "svg-to-ts": "^8.6.1"
+    "svg-to-ts": "^8.6.1",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular-eslint/eslint-plugin": "^20.2.0",
@@ -41,6 +41,7 @@
     "@typescript-eslint/parser": "^8.42.0",
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
     "stylelint": "^16.24.0",

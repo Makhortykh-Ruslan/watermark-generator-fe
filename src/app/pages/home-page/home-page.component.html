@@ -1,28 +1,13 @@
-<div class="page">
-  <div class="page-icon">
-    <app-icon [name]="'cloud_load'"></app-icon>
-  </div>
-  <h1 class="page-title">What do you want to add a watermark to?</h1>
-  <p class="page-subtitle">Select the desired format</p>
+@let currentStep = pageStep();
 
-  <section class="page-select">
-    <section class="card">
-      <img
-        class="card-img files"
-        src="assets/images/files.png"
-        alt="files-img"
-      />
-      <p class="title">Upload videos</p>
-      <p class="subtitle">You will only be able to upload videos</p>
-    </section>
-    <section class="card">
-      <img
-        class="card-img images"
-        src="assets/images/image.png"
-        alt="img-img"
-      />
-      <p class="title">Upload images</p>
-      <p class="subtitle">You will only be able to upload photos</p>
-    </section>
-  </section>
+<div class="page">
+  @switch (currentStep) {
+    @case (ESteps.SELECT_TYPE) {
+      <app-select-type (output)="handleChangeStep($event)"></app-select-type>
+    }
+
+    @case (ESteps.UPLOAD_FILE) {
+      <app-upload-file></app-upload-file>
+    }
+  }
 </div>

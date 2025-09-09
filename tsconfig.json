@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@core/*": ["app/core/*"],
+      "@icons/*": ["wg-icons/*"],
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

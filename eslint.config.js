@@ -2,6 +2,7 @@ const typescriptPlugin = require('@typescript-eslint/eslint-plugin');
 const angularEslintPlugin = require('@angular-eslint/eslint-plugin');
 const angularEslintTemplatePlugin = require('@angular-eslint/eslint-plugin-template');
 const prettierPlugin = require('eslint-plugin-prettier');
+const importPlugin = require('eslint-plugin-import');
 
 module.exports = [
   {
@@ -18,6 +19,7 @@ module.exports = [
       '@typescript-eslint': typescriptPlugin,
       '@angular-eslint': angularEslintPlugin,
       prettier: prettierPlugin,
+      import: importPlugin,
     },
     rules: {
       'prettier/prettier': [
@@ -54,7 +56,6 @@ module.exports = [
       ],
       'no-multiple-empty-lines': 'error',
       'prefer-const': 'error',
-      'max-len': ['error', { code: 70, ignoreComments: true }],
       '@typescript-eslint/member-ordering': [
         'error',
         {
@@ -72,6 +73,34 @@ module.exports = [
             'protected-instance-method',
             'private-instance-method',
           ],
+        },
+      ],
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+          ],
+          pathGroups: [
+            {
+              pattern: '@angular/**',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: '@core/**',
+              group: 'internal',
+              position: 'after',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
     },
