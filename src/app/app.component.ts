@@ -4,8 +4,9 @@ import {
   signal,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { WgIconsService } from '../wg-icons/wg-icons.service';
-import { completeIconSet } from '../wg-icons/wg-icons';
+
+import { completeIconSet } from '@icons/wg-icons';
+import { WgIconsService } from '@icons/wg-icons.service';
 
 @Component({
   selector: 'app-root',

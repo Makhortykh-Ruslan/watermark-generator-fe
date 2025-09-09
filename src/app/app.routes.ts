@@ -1,7 +1,8 @@
 import { provideRouter, Routes } from '@angular/router';
 
+import { appRoutes } from '@core/constants';
+
 import { environment } from '../environments/environment';
-import { appRoutes } from './core/constants';
 
 const baseRoutes = [
   {
