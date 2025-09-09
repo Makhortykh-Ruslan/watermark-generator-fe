@@ -8,6 +8,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint \"{src,apps,libs,test}/**/*{.ts,.html}\" --fix",
     "format": "prettier --write \"{src,apps,libs,test}/**/*.{ts,html,scss,css,md,json}\"",
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "stylelint:fix": "npm run stylelint -- --fix",
     "generate-icons": "svg-to-ts-constants --config .svg-to-ts.json"
   },
   "private": true,

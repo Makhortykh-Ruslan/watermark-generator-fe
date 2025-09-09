@@ -1,13 +1,19 @@
+@use 'assets/styles/index.components' as *;
+
 html,
 body {
   height: 100%;
+  font-size: 16px;
 }
+
 body {
+  @extend .scroll-bar;
+
   margin: 0;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }

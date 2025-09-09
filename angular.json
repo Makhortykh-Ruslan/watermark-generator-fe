@@ -16,7 +16,8 @@
           "skipTests": true,
           "flat": true,
           "style": "scss",
-          "type": "component"
+          "type": "component",
+          "changeDetection": "OnPush"
         },
         "@schematics/angular:directive": {
           "standalone": true,
@@ -47,11 +48,17 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",

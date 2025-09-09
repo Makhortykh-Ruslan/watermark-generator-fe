@@ -14,8 +14,8 @@
   &::ng-deep svg {
     & path,
     & circle {
-      stroke: $color;
       fill: none;
+      stroke: $color;
     }
   }
 }
@@ -52,21 +52,21 @@
 
 @mixin svg-size($width, $height) {
   &::ng-deep svg {
-    width: $width;
     height: $height;
+    width: $width;
   }
 }
 
 @mixin svg-size-without-deep($width, $height) {
   & svg {
-    width: $width;
     height: $height;
+    width: $width;
   }
 }
 
 @mixin truncate($width) {
-  width: $width;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $width;
 }

@@ -1,4 +1,4 @@
-type MainPageRoutingPath = 'main';
+type MainPageRoutingPath = 'files' | 'edit';
 
 type CoreRoutingPath = 'icons';
 
@@ -15,6 +15,6 @@ export const appRoutes: Record<
     routerPath: 'icons',
   },
 
-  // Main routing //
-  main: { routerPath: 'main' },
+  files: { routerPath: 'files' },
+  edit: { routerPath: 'edit' },
 };

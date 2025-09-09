@@ -1,6 +1,6 @@
-@use 'vars' as *;
-@use 'mixins' as *;
-@use 'extends' as *;
+ @use 'vars' as *;
+ @use 'mixins' as *;
+ @use 'extends' as *;
 
 @mixin tm-modal($width: 500px) {
   .mat-mdc-dialog-surface {
@@ -8,47 +8,47 @@
   }
 
   .modal {
-    min-width: $width;
     max-width: $width;
+    min-width: $width;
   }
 
   .modal-header {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 0 8px 0;
-    padding: 24px 24px 0 24px;
+    margin: 0 0 8px;
+    padding: 24px 24px 0;
 
-    & .title {
+    .title {
       @include font-base(24px, 700, 38px, normal);
 
-      color: $black;
+      //color: $black;
     }
   }
 
   .modal-main {
     @extend .scroll-bar;
 
-    padding: 0 24px;
-    overflow-y: auto;
     max-height: 400px;
+    overflow-y: auto;
+    padding: 0 24px;
   }
 
   .modal-footer {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
+    display: flex;
     gap: 12px;
-    margin: 32px 0 0 0;
-    padding: 0 24px 24px 24px;
+    justify-content: flex-end;
+    margin: 32px 0 0;
+    padding: 0 24px 24px;
 
     & .btn {
-      width: 160px;
       height: 36px;
+      width: 160px;
     }
   }
 }
 
 .cdk-overlay-dark-backdrop {
-  background-color: rgba(52, 64, 84, 0.7);
+  background-color: rgb(52 64 84 / 70%);
 }

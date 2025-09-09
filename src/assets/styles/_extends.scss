@@ -2,8 +2,8 @@
 
 .scroll-bar {
   &::-webkit-scrollbar {
-    width: 5px;
     height: 5px;
+    width: 5px;
   }
 
   &::-webkit-scrollbar-track {
@@ -11,7 +11,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $blue-hover;
+    background: $orange;
     border-radius: 4px;
   }
 }
