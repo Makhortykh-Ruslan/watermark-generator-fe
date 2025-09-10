@@ -1,28 +1,12 @@
 <section class="component">
-  <div class="component-icon">
-    <app-icon [name]="'cloud_load'"></app-icon>
-  </div>
-  <h1 class="component-title">What do you want to add a watermark to?</h1>
-  <p class="component-subtitle">Select the desired format</p>
-
-  <section class="component-select">
-    <section class="card" (click)="output.emit('video')">
-      <img
-        class="card-img files"
-        src="assets/images/files.png"
-        alt="files-img"
-      />
-      <p class="title">Upload videos</p>
-      <p class="subtitle">You will only be able to upload videos</p>
-    </section>
-    <section class="card" (click)="output.emit('img')">
-      <img
-        class="card-img images"
-        src="assets/images/image.png"
-        alt="img-img"
-      />
-      <p class="title">Upload images</p>
-      <p class="subtitle">You will only be able to upload photos</p>
-    </section>
+  <section class="card" (click)="select.emit('video')">
+    <img class="card-img files" src="assets/images/files.png" alt="files-img" />
+    <p class="title">Upload videos</p>
+    <p class="subtitle">You will only be able to upload videos</p>
+  </section>
+  <section class="card" (click)="select.emit('img')">
+    <img class="card-img images" src="assets/images/image.png" alt="img-img" />
+    <p class="title">Upload images</p>
+    <p class="subtitle">You will only be able to upload photos</p>
   </section>
 </section>

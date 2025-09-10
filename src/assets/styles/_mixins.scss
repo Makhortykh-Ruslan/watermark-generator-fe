@@ -1,9 +1,9 @@
 @use 'vars' as vars;
 
 @mixin font-base(
-  $size: vars.$font-size-base,
+  $size: 1rem,
   $font-weight: 400,
-  $height: vars.$line-height-base,
+  $height: normal,
   $font-style: normal,
   $font-family: vars.$font-family-base
 ) {

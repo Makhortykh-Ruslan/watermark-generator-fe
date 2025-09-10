@@ -1,13 +1,22 @@
-@let currentStep = pageStep();
+@let step = currentStep();
 
 <div class="page">
-  @switch (currentStep) {
+  @switch (step) {
     @case (ESteps.SELECT_TYPE) {
-      <app-select-type (output)="handleChangeStep($event)"></app-select-type>
+      <div class="icon">
+        <app-icon [name]="'cloud_load'"></app-icon>
+      </div>
+      <h1 class="title">What do you want to add a watermark to?</h1>
+      <p class="subtitle">Select the desired format</p>
+
+      <app-select-type (select)="handleChangeStep($event)"></app-select-type>
     }
 
     @case (ESteps.UPLOAD_FILE) {
-      <app-upload-file></app-upload-file>
+      <app-drag-drop-file
+        [type]="selectedTypeFile()"
+        (uploadFiles)="handleSelectedFile($event)"
+      ></app-drag-drop-file>
     }
   }
 </div>

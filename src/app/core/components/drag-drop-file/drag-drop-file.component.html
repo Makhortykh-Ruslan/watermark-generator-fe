@@ -1,0 +1,54 @@
+@let componentType = type();
+@let componentSize = size();
+
+@switch (componentSize) {
+  @case ('big') {
+    <div appDrag class="drop-zone big" (fileDropped)="handleDropFiles($event)">
+      <div class="icon">
+        <app-icon [name]="'cloud_black'"></app-icon>
+      </div>
+
+      <h2 class="title">
+        {{ componentType === 'img' ? 'Upload images' : 'Upload files' }}
+      </h2>
+      <p class="text">
+        {{
+          componentType === 'img'
+            ? 'Drag and drop the images here, or'
+            : 'Drag and drop the files here, or'
+        }}
+      </p>
+
+      <button appButton [isUseStroke]="true">
+        <app-icon [name]="'paperclip'"></app-icon>
+        {{ componentType === 'img' ? 'Upload images' : 'Upload files' }}
+      </button>
+      <input
+        [multiple]="multiSelect"
+        type="file"
+        id="fileDropRef"
+        class="custom-input pointer"
+        (change)="handleUploadFiles($event)"
+      />
+    </div>
+  }
+  @case ('small') {
+    <div
+      appDrag
+      class="drop-zone small"
+      (fileDropped)="handleDropFiles($event)"
+    >
+      <app-icon class="small-icon" [name]="'cloud_black'"></app-icon>
+      <p class="text">
+        {{ componentType === 'img' ? 'Add more images' : 'Add more filles' }}
+      </p>
+      <input
+        [multiple]="multiSelect"
+        type="file"
+        id="fileDropRef"
+        class="custom-input pointer"
+        (change)="handleUploadFiles($event)"
+      />
+    </div>
+  }
+}

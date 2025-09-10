@@ -33,10 +33,6 @@
           "skipTests": true,
           "flat": true
         },
-        "@schematics/angular:class": {
-          "skipTests": true,
-          "flat": true
-        }
       },
       "root": "",
       "sourceRoot": "src",

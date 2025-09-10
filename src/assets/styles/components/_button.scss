@@ -1,87 +1,88 @@
-// @use 'vars' as *;
-// @use 'mixins' as *;
-//
-//.tm-button {
-//  align-items: center;
-//  border-radius: 8px;
-//  cursor: pointer;
-//  display: flex;
-//  gap: 8px;
-//  justify-content: center;
-//  padding: 12px 8px;
-//  transition: all 0.2s ease-in;
-//
-//  &:hover {
-//    transition: all 0.2s ease-in;
-//  }
-//
-//  &:active {
-//    transition: all 0.2s ease-in;
-//  }
-//
-//  &.blue {
-//    @include font-base(16px, 500, normal, normal);
-//
-//    background-color: $blue;
-//    border: none;
-//    color: $white;
-//
-//    &:hover {
-//      background-color: $blue-hover;
-//    }
-//
-//    &:active {
-//      background: $blue-click;
-//      box-shadow:
-//        0 1px 2px 0 rgb(16 24 40 / 5%),
-//        0 0 0 4px $blue-shadow;
-//    }
-//
-//    &:disabled {
-//      background-color: $disabled;
-//      color: $disabled-text;
-//      cursor: default;
-//    }
-//
-//    & app-icon {
-//      @include svg-stroke-without-deep($white);
-//    }
-//  }
-//
-//  &.blue-border {
-//    @include font-base(16px, 500, normal, normal);
-//
-//    background-color: $white;
-//    border: 1px solid $blue;
-//    color: $blue;
-//
-//    & app-icon {
-//      @include svg-stroke-without-deep($blue);
-//    }
-//
-//    &:hover {
-//      border: 1px solid $blue-click;
-//
-//      & app-icon {
-//        @include svg-stroke-without-deep($blue-click);
-//      }
-//    }
-//
-//    &:active {
-//      border-color: $blue-click;
-//      box-shadow:
-//        0 1px 2px 0 rgb(16 24 40 / 5%),
-//        0 0 0 4px $blue-shadow;
-//    }
-//
-//    &:disabled {
-//      border-color: $disabled-text;
-//      color: $disabled-text;
-//      cursor: default;
-//
-//      & app-icon {
-//        @include svg-stroke-without-deep($disabled-text);
-//      }
-//    }
-//  }
-//}
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.wg-button {
+  @include font-base(1rem, 500, 19px, normal);
+
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  white-space: nowrap;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  padding: 8px 12px;
+
+  &:hover {
+    transition: all 0.2s ease-in;
+  }
+
+  &:active {
+    transition: all 0.2s ease-in;
+  }
+
+  &:disabled {
+    cursor: initial;
+    pointer-events: none;
+  }
+
+  & app-icon {
+    & svg {
+      & path,
+      & circle {
+        transition: all 0.2s ease-in;
+      }
+    }
+  }
+
+  &.grey {
+    color: $dark-blue;
+    background: $dark-grey;
+
+    &:hover {
+      color: $light-gray;
+
+      & app-icon {
+        @include svg-fill-without-deep($light-gray);
+      }
+
+      &.stroke {
+        & app-icon {
+          @include svg-stroke-without-deep($light-gray);
+        }
+      }
+    }
+
+    &:active {
+      color: $dark-blue;
+    }
+
+    &:disabled {
+      color: $light-gray;
+
+      & app-icon {
+        @include svg-fill-without-deep($light-gray);
+      }
+
+      &.stroke {
+        & app-icon {
+          @include svg-stroke-without-deep($light-gray);
+        }
+      }
+    }
+
+    app-icon {
+      @include svg-size(18px, 18px);
+      @include svg-fill-without-deep($dark-blue);
+    }
+
+    &.stroke {
+      & app-icon {
+        @include svg-stroke-without-deep($dark-blue);
+      }
+    }
+  }
+}

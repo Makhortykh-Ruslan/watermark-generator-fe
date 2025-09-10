@@ -1,0 +1,82 @@
+@use "mixins" as *;
+@use "vars" as *;
+
+.drop-zone {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px dashed $dash;
+  background: $white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .icon {
+    @include svg-size(48px, 48px);
+
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid $color-border;
+    background-color: $white;
+    box-shadow: 0 0 0 2px rgba(186, 186, 186, 0.10);
+    margin: 0 0 2rem 0;
+  }
+
+  .title {
+    @include font-base(3rem, 600, 32px, normal);
+
+    color: $black;
+    margin: 0 0 1rem 0;
+  }
+
+  .text {
+    @include font-base(1.5rem, 500, 32px, normal);
+
+    color: $light-gray;
+    margin: 0 0 3rem 0;
+  }
+
+  .custom-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: block;
+
+    &.pointer {
+      cursor: pointer;
+    }
+  }
+
+  &.big {
+    padding: 100px;
+    width: 81.25rem;
+    height: 28.75rem;
+  }
+
+  &.small {
+    border-radius: 8px;
+    width: 14.5rem;
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .small-icon {
+      @include svg-size(28px, 28px);
+      @include svg-fill($black);
+    }
+
+    .text {
+      @include font-base(0.9rem, 500, normal, normal);
+
+      color: $black;
+      margin: 6px 0 0 0;
+    }
+  }
+}
